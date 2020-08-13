@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap');
+
+:root {
+    --title-font: 'Fredoka One', sans-serif;
+    --body-font:  'Roboto', sans-serif;
+    --text-color: #757575;
+    --poke-red: #c62828;
+    --poke-red-hover: #f44336;
+    --poke-blue: #283593;
+    --poke-blue-light: #1976D2;
+    --poke-blue-light-hover: #64B5F6;
+    --poke-yellow: #f1c40f;
+}
+body {
+    background: #eee;
+    font-family: var(--body-font);
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--poke-blue);
+}
+
+h1 {
+    font-family: var(--title-font);
+    font-size: 2em;
+    padding: 0;
+    margin: 0;
+    color: var(--poke-yellow);
+}
+
+h2 {
+    font-family: var(--title-font);
+    font-size: 2em;
+    padding: 0;
+    margin: 0 0 1em 0;    
+    color: var(--poke-blue);
+}
+
+nav {
+    padding: 1em 2em;
+    position: fixed;
+    background: #eee;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: var(--poke-blue);
+    z-index: 2;
+}
+
+nav a {
+    color: white;
+    margin:0 1em 0 0.5em; 
+}
+
+nav img {
+    width: 1.5em;
+}
+
+ul {
+    list-style: square;
+    text-transform: capitalize;
+}
+
+button[type=submit] {
+    background: var(--poke-red);
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    border-radius: 2em;
+}
+
+button[type=submit]:hover {
+    cursor: pointer;
+    background: var(--poke-red-hover);
+}
+
+/***** ELEMENT STYLES *****/
+
+.page_wrap {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+#create {
+    background: #eee;
+    padding: 0.5em 1em;
+    color: var(--poke-blue);
+    border-radius: 2em;
+}
+
+.content_wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 6em;
+    animation: fade-in 1s ease;
+}
+
+.sort_wrap {
+    width: 100%;
+    text-align: center;
+}
+
+.poke_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    color: var(--text-color);
+    margin: 1em;
+    padding: 1em;
+    border-radius: 6px;
+    box-shadow:
+        0 0.6px 2.2px rgba(0, 0, 0, 0.02),
+        0 1.5px 5.3px rgba(0, 0, 0, 0.028),
+        0 2.9px 10px rgba(0, 0, 0, 0.035),
+        0 5.1px 17.9px rgba(0, 0, 0, 0.042),
+        0 9.6px 33.4px rgba(0, 0, 0, 0.05),
+        0 23px 80px rgba(0, 0, 0, 0.07);
+}
+
+.poke_wrap:hover {
+    outline: 2px solid var(--poke-blue);
+}
+
+.poke_title {
+    font-family: var(--title-font);
+    margin-bottom: 0;
+    color: var(--poke-blue);
+}
+
+.poke_img {
+    width: 8em;
+    height: 8em;
+}
+
+.poke_type {
+    display: inline;
+    font-size: 0.6em;
+    margin: 0 0.5em;
+    background: #eee;
+    padding: 0.5em;
+    border-radius: 6px;
+}
+
+.show_wrap {
+    display: flex;
+    background: white;
+    color: var(--text-color);
+    margin: 1em;
+    border-radius: 6px;
+    box-shadow:
+        0 0.6px 2.2px rgba(0, 0, 0, 0.02),
+        0 1.5px 5.3px rgba(0, 0, 0, 0.028),
+        0 2.9px 10px rgba(0, 0, 0, 0.035),
+        0 5.1px 17.9px rgba(0, 0, 0, 0.042),
+        0 9.6px 33.4px rgba(0, 0, 0, 0.05),
+        0 23px 80px rgba(0, 0, 0, 0.07);
+    animation: slide-in 1.2s ease;
+}
+
+.show_image {
+    padding: 4em;
+    max-width: 400px;
+    height: auto;
+}
+
+.stats_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #283592;
+    color: white;
+    border-radius: 0 6px 6px 0;
+}
+
+.stats_wrap_inner {
+    padding: 4em;
+}
+
+.stats_wrap_inner h2 {
+    color: var(--poke-yellow);
+}
+
+.stats_header {
+    font-family: var(--title-font);
+    margin: 0;
+}
+
+.actions_wrap {
+    display: flex;
+    align-items: center;
+}
+
+.edit_btn {
+    background: var(--poke-blue-light);
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    margin: 1em 0 0 1em;    
+    border-radius: 2em;
+}
+
+.edit_btn:hover {
+    cursor: pointer;
+    background: var(--poke-blue-light-hover);
+}
+
+/**** FORM STYLES ****/
+
+.field {
+    margin: 0.5em 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.field label {
+    margin: 0 0.5em;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-40px)
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
