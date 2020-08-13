@@ -18,6 +18,12 @@ app.use(methodOverride('_method'));
 
 // <- ROUTES ====================================== ->
 
+// ROOT
+
+app.get('/', (req, res) => {
+    res.send('Please visit /pokemon to see Pokedex');
+})
+
 // INDEX
 app.get('/pokemon', (req, res) => {
     res.render('Index', { pokemon: Pokemon });
