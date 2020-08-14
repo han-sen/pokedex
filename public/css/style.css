@@ -38,6 +38,12 @@ h2 {
     color: var(--poke-blue);
 }
 
+h3 {
+    font-family: var(--title-font);
+    color: #757575;
+    margin-bottom: 0;
+}
+
 nav {
     padding: 1em 2em;
     position: fixed;
@@ -104,6 +110,24 @@ button[type=submit]:hover {
 .sort_wrap {
     width: 100%;
     text-align: center;
+}
+
+.sort_button {
+    cursor: pointer;
+    background: #757575;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    margin: 1em 0.5em 1em 0.5em;
+    border-radius: 2em;
+}
+
+.sort_button:hover {
+    background: #9E9E9E;
+}
+
+.sort_button a {
+    color: white;
 }
 
 .poke_wrap {

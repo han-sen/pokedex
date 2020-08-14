@@ -3,8 +3,6 @@
 const express = require('express');
 const methodOverride = require('method-override');
 const app = express();
-const port = process.env.PORT || 3000;
-
 
 // <- DATA ======================================== ->
 
@@ -20,15 +18,23 @@ app.use(methodOverride('_method'));
 
 // <- ROUTES ====================================== ->
 
-// ROOT
+// sorting function
 
-app.get('/', (req, res) => {
-    res.redirect('/pokemon');
-});
+handleSort = (sortKey) => {
+    const newArr = [...Pokemon];
+    return newArr.sort((a,b) => a[sortKey] < b[sortKey] ? -1 : 1);
+}
 
 // INDEX
 app.get('/pokemon', (req, res) => {
-    res.render('Index', { pokemon: Pokemon });
+    const sortedPokemon = handleSort(req.query.sortKey);
+    if (sortedPokemon) {
+        // if query is not undefined deliver sorted arr
+        res.render('Index', { pokemon: sortedPokemon });
+        // else just give data as is
+    } else {
+        res.render('Index', { pokemon: Pokemon });
+    }
 });
 
 // NEW
@@ -97,6 +103,6 @@ app.get('/pokemon/:index', (req, res) => {
     });
 });
 
-app.listen(port, () => {
+app.listen(3000, () => {
     console.log('running on port 3000');
 });
