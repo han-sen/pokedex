@@ -3,6 +3,8 @@
 const express = require('express');
 const methodOverride = require('method-override');
 const app = express();
+const port = process.env.PORT || 3000;
+
 
 // <- DATA ======================================== ->
 
@@ -21,8 +23,8 @@ app.use(methodOverride('_method'));
 // ROOT
 
 app.get('/', (req, res) => {
-    res.send('Please visit /pokemon to see Pokedex');
-})
+    res.send('Visit /pokemon for pokedex');
+});
 
 // INDEX
 app.get('/pokemon', (req, res) => {
@@ -95,6 +97,6 @@ app.get('/pokemon/:index', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('running on port 3000');
 });
