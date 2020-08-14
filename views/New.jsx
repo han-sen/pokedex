@@ -14,7 +14,7 @@ class New extends React.Component {
                         </div>        
                         <div className="field">
                             <label className="label">Image:</label>
-                            <input type="url" name="img" defaultValue="http://localhost:3000/img/pokeball.png"/>
+                            <input type="url" name="img" defaultValue="https://hansen-pokedex.herokuapp.com/img/pokeball.png"/>
                         </div>
                         <div className="field">                    
                             <label className="label">Types (seperate by spaces):</label>

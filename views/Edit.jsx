@@ -16,7 +16,7 @@ class Edit extends React.Component {
                   </div>        
                   <div className="field">
                     <label className="label">Image:</label>
-                    <input type="url" name="img" value={pokemon.img ? pokemon.img : "http://localhost:3000/img/pokeball.png"}/>
+                    <input type="url" name="img" value={pokemon.img ? pokemon.img : "https://hansen-pokedex.herokuapp.com/img/pokeball.png"}/>
                   </div>
                   <div className="field">                    
                     <label className="label">Types (seperate by spaces):</label>
