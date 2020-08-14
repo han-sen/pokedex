@@ -23,7 +23,7 @@ app.use(methodOverride('_method'));
 // ROOT
 
 app.get('/', (req, res) => {
-    res.send('Visit /pokemon for pokedex');
+    res.redirect('/pokemon');
 });
 
 // INDEX
