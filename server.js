@@ -26,6 +26,11 @@ handleSort = (sortKey) => {
     return newArr.sort((a,b) => a[sortKey] < b[sortKey] ? -1 : 1);
 }
 
+// hande / route
+app.get('/', (req, res) => {
+    res.redirect('/pokemon');
+})
+
 // INDEX
 app.get('/pokemon', (req, res) => {
     const sortedPokemon = handleSort(req.query.sortKey);
