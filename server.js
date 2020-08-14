@@ -58,6 +58,7 @@ app.delete('/pokemon/:index', (req, res)=>{
 app.put('/pokemon/:index', (req, res) => { 
     const newPokemon = {
         name: req.body.name,
+        id: req.body.id,
         img: req.body.img,
         type: req.body.types.split(" "),
         stats: {
@@ -76,6 +77,7 @@ app.put('/pokemon/:index', (req, res) => {
 // CREATE
 app.post('/pokemon', (req, res) => {
     const newPokemon = {
+        id: req.body.id,
         name: req.body.name,
         img: req.body.img,
         type: req.body.types.split(" "),

@@ -1,5 +1,6 @@
 const React = require('react');
 const Default = require('./components/Default');
+const pokemon = require('../models/pokemon');
 
 class New extends React.Component {
     render() {
@@ -7,7 +8,7 @@ class New extends React.Component {
             <Default>
                 <div>
                     <h2>Add a new Pokemon</h2>
-                    <form action="/pokemon" method="POST">
+                    <form action="/pokemon" method="POST">              
                         <div className="field">
                             <label className="label">Name:</label>
                             <input type="text" name="name"/> 
@@ -43,6 +44,10 @@ class New extends React.Component {
                         <div className="field"> 
                             <label className="label">Speed:</label>
                             <input type="number" name="speed"/>
+                        </div>
+                        <div className="field"> 
+                            <label className="label">Id:</label>
+                            <input type="number" name="id" defaultValue={pokemon.length +1} readOnly/>
                         </div>
                         <button type="submit">Create Pokemon</button>
                     </form>

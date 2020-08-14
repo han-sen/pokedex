@@ -46,6 +46,10 @@ class Edit extends React.Component {
                     <label className="label">Speed:</label>
                     <input type="number" name="speed" value={pokemon.stats.speed}/>
                   </div>
+                  <div className="field"> 
+                    <label className="label">Id:</label>
+                    <input type="number" name="id" defaultValue={pokemon.id} readOnly/>
+                  </div>
                   <button type="submit" name="" value="Submit Changes">SUBMIT CHANGES</button>
                 </form>
             </div>
