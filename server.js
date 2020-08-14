@@ -17,7 +17,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
 
-// <- ROUTES ====================================== ->
+// <- UTILITY ===================================== ->
 
 // sorting function
 
@@ -26,16 +26,18 @@ handleSort = (sortKey) => {
     return newArr.sort((a,b) => a[sortKey] < b[sortKey] ? -1 : 1);
 }
 
-// hande / route
+// <- ROUTES ====================================== ->
+
+// redirect home to pokedex
 app.get('/', (req, res) => {
     res.redirect('/pokemon');
 })
 
 // INDEX
 app.get('/pokemon', (req, res) => {
-    const sortedPokemon = handleSort(req.query.sortKey);
-    if (sortedPokemon) {
-        // if query is not undefined deliver sorted arr
+        // if query exists deliver sorted arr
+    if (req.query.sortKey) {
+        const sortedPokemon = handleSort(req.query.sortKey);
         res.render('Index', { pokemon: sortedPokemon });
         // else just give data as is
     } else {
@@ -97,10 +99,9 @@ app.post('/pokemon', (req, res) => {
 // EDIT 
 app.get('/pokemon/:index/edit', function(req, res){
 	res.render('Edit', {
-			onePokemon: Pokemon[req.params.index],
-			index: req.params.index
-		}
-	);
+        onePokemon: Pokemon[req.params.index],
+        index: req.params.index
+	});
 });
 
 // SHOW 
